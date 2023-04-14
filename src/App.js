@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/home/Home';
+import Navbar from './components/navbar/Navbar';
+import Products from './pages/products/Products';
+import Faqs from './pages/faqs/Faqs';
+import Kundeklub from './pages/customerClub/Kundeklub';
+import NotFound from './pages/NotFound';
+import Footer from './components/Footer';
+import { useState } from 'react';
 
 function App() {
+  /* const [cartItems, setCartItems] = useState([]) */
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar /* cartItems={cartItems } */ />
+
+      <Routes>
+        <Route path='' element={<Home /> } />
+        <Route path='/produkter' element={<Products /> } />
+        <Route path='/faq' element={<Faqs /> } />
+        <Route path='/kundeklubben' element={<Kundeklub /> } />
+        <Route path='/*' element={<NotFound /> } />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
 
