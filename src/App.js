@@ -10,11 +10,11 @@ import Footer from './components/Footer';
 import { useState } from 'react';
 
 function App() {
-  /* const [cartItems, setCartItems] = useState([]) */
+  const [cartItems, setCartItems] = useState([])
 
   return (
     <BrowserRouter>
-      <Navbar /* cartItems={cartItems } */ />
+      <Navbar cartItems={cartItems } />
 
       <Routes>
         <Route path='' element={<Home /> } />

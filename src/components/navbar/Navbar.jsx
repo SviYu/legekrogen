@@ -32,7 +32,7 @@ const Navbar = ({cartItems}) => {
                     
                 <div className="navbar-right">
                         
-                    <Cart /* cartItems={cartItems} */ />
+                    <Cart cartItems={cartItems} />
 
                     <ul className={`nav-links ${navShowing ? 'show-nav' : 'hide-nav'}`} onClick={() => setNavShowing(false)}>
                         
