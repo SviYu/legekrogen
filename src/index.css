@@ -182,33 +182,12 @@ a{
   margin: 0 .5rem;
 }
 
-/* Cart */
-.cart-wrapper{
-  position: fixed;
-  top: 10rem;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .8);
-  z-index: 5;
-}
-.cart-container{
-  background-color: var(--color-white);
-  width: 100%;
-  min-height: 15rem;
-}
-.empty-cart-text{
-  text-align: center;
-  padding-top: 6rem;
-}
-
 @media screen and (min-width: 768px) {
   .footer-wrapper{
     height: 25rem;
     flex-direction: row;
     justify-content: space-between;
   }
-
 }
 @media screen and (min-width: 1024px) {
   .container {
@@ -219,5 +198,4 @@ a{
     padding: .6rem 2.6rem;
     font-size: 1.6rem;
   }
-
 }
