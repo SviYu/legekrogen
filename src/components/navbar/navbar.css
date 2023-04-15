@@ -21,7 +21,7 @@
 }
 .nav-links{
     width: 100vw;
-    height: 93vh;
+    height: 100vh;
     position: absolute;
     top: 7rem;
     left: 0;
@@ -74,13 +74,33 @@
 }
 .navbar-right{
     display: flex;
-    
 }
 .cart-btn{
     color: #6A86A0;
     font-size: 2rem;
     cursor: pointer;
     margin: 0.3rem 1.5rem 0 0;
+}
+.cart-btn.active{
+    color: var(--color-white);
+}
+.count-active{
+    position: relative;
+}
+.count{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    cursor: pointer;
 }
 
 /* Tablet size */
@@ -115,5 +135,8 @@
     }
     .cart-btn{
         margin-left: 1.5rem;
+    }
+    .count{
+        left: 2.5rem;
     }
 }

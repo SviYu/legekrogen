@@ -1,0 +1,125 @@
+/* Cart Modal*/
+.cart-wrapper {
+    position: sticky;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    height: 100vmax;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 5;
+}
+
+.cart-container {
+    background-color: var(--color-white);
+    width: 100%;
+    height: fit-content;
+    min-height: 15rem;
+    padding: 4rem 0;
+}
+
+.empty-cart-text {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-primary);
+    height: 12rem;
+}
+
+.cart-item-left {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.cart-item-left img {
+    width: 9.5rem;
+    height: 9.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-secondary);
+    object-fit: cover;
+    padding: 1rem;
+}
+
+.cart-item-left-text {
+    padding: 1rem 2rem;
+}
+
+.cart-item-left-text-title {
+    font-size: 1.2rem;
+}
+
+.cart-item-right-price {
+    font-size: 2.2rem;
+}
+
+.cart-item-right {
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-item-right-btn {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.cart-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.go-to-cart-btn {
+    min-width: 12rem;
+    margin: 0;
+}
+
+/* Cart Page */
+.cart-header{
+    background-color: var(--color-light-primary);
+    width: 100%;
+    height: 30rem;
+    display: grid;
+    place-items: center;
+}
+.cart-header h1{
+    font-size: 6.5rem;
+    font-weight: 100;
+    color: var(--color-white);
+    margin-top: 10rem;
+}
+.cart-page-list{
+    padding: 5rem 0;
+    min-height: 70vh;
+}
+
+@media screen and (min-width: 768px) {
+    .cart-total {
+        font-size: rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cart-item-right-btn {
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+    }
+}

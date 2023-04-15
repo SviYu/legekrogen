@@ -7,20 +7,22 @@ import Faqs from './pages/faqs/Faqs';
 import Kundeklub from './pages/customerClub/Kundeklub';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
-import { useState } from 'react';
+import Cart from './components/Cart';
+import CartPage from './pages/cartPage/CartPage';
 
 function App() {
-  const [cartItems, setCartItems] = useState([])
 
   return (
     <BrowserRouter>
-      <Navbar cartItems={cartItems } />
+      <Navbar />
+      <Cart />
 
       <Routes>
         <Route path='' element={<Home /> } />
         <Route path='/produkter' element={<Products /> } />
         <Route path='/faq' element={<Faqs /> } />
         <Route path='/kundeklubben' element={<Kundeklub /> } />
+        <Route path='/kurv' element={<CartPage /> } />
         <Route path='/*' element={<NotFound /> } />
       </Routes>
 

@@ -1,32 +1,37 @@
-import React, { useState } from 'react'
-import { BsCartFill } from 'react-icons/bs'
+import React, { useContext } from 'react'
+import CartContext from '../context/cart/CartContext'
+import CartItem from './CartItem';
+import { Link } from 'react-router-dom';
+import './../pages/cartPage/cart.css'
 
-const Cart = ({cartItems}) => {
-    const [openCart, setOpenCart] = useState(false);
-
-    /* Toggling the Cart btn */
-    const toggleCart = () => {
-        setOpenCart(!openCart)
-        console.log('Cart toggle', openCart)
-    }
+const Cart = () => {
     
+    const { showCart, cartItems, showHideCart } = useContext(CartContext);
+
   return (
       <>
-          <BsCartFill className='cart-btn' onClick={toggleCart} />
-          
-          {
-              openCart ? (
-                  <div className='cart-wrapper'>
-                      <div className='cart-container'>
-                          <div className="cart-container-content container">
-                            {cartItems.length === 0 && <div className='empty-cart-text'>Kurv er tom</div>}
-                              
-                          </div>
+          {showCart && (
+              <div className='cart-wrapper'>
+                  <div className="cart-container">
+                      <div className="cart-inner-wrapper container">
+                        {cartItems.length === 0 ? 
+                            (<h4 className='empty-cart-text'>Kurv er tom</h4>) : 
+                            (<ul>
+                                {cartItems.map((item) => {
+                                    return <CartItem key={item._id} item={item} />
+                                })}
+                                  
+                                <div className='cart-bottom'>
+                                    <Link className='go-to-cart-btn btn' to="/kurv" onClick={showHideCart}>GÅ TIL KURV</Link>
+                                    <p className='cart-total'>I alt {cartItems.reduce((amount, item) => item.price + amount, 0)} kr</p>
+                                </div>
+                            </ul>)
+                        }
+
                       </div>
-                      
                   </div>
-              ) : null
-          }
+              </div>
+          )}
       </>
   )
 }
