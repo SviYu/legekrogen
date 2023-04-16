@@ -96,6 +96,7 @@ a{
   z-index: 2;
   background-color: var(--color-overlay);
   padding: 2rem 0;
+  width: 100vw;
 }
 .header-container h1 {
   letter-spacing: .3rem;
