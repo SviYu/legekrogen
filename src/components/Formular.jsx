@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import './../pages/customerClub/kundeklub.css'
 import { Link } from 'react-router-dom';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Formular = () => {
     const {
@@ -62,46 +63,55 @@ const Formular = () => {
           <form method='post'
               className='formular-section-form'
               onSubmit={handleSubmit(submitForm)}>
-              <input 
-                  className='input-field'
-                  type="text"
-                  placeholder='Fulde navn'
-                  {...register("name", {
-                      required: "*Navnet skal udfyldes"
-                  })}
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-              />
-              <div className="err-text">{errors?.name?.message}</div>
               
-              <input
-                  className='input-field'
-                  type="email"
-                  placeholder='Email'
-                  {...register('email', {
-                      required: "*Email skal udfyldes",
-                      pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "*Ugyldig emailadresse"
-                      }
+              <AnimationOnScroll animateIn='animate__headShake'>
+                <input 
+                    className='input-field'
+                    type="text"
+                    placeholder='Fulde navn'
+                    {...register("name", {
+                        required: "*Navnet skal udfyldes"
                     })}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-              />
-              <div className="err-text">{errors?.email?.message}</div>
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                />
+                <div className="err-text">{errors?.name?.message}</div> 
+              </AnimationOnScroll>
+              
+              <AnimationOnScroll animateIn='animate__headShake'>
+                <input
+                    className='input-field'
+                    type="email"
+                    placeholder='Email'
+                    {...register('email', {
+                        required: "*Email skal udfyldes",
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "*Ugyldig emailadresse"
+                        }
+                        })}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <div className="err-text">{errors?.email?.message}</div>
+              </AnimationOnScroll>
 
-              <textarea
-                  className='input-field'
-                  placeholder='Hvem køber du legetøj til?'
-                  rows={8}
-                  {...register("message", {
-                      required: "*Husk at skrive noget"
-                  })}
-                  value={msg}
-                  onChange={(e) => setMsg(e.target.value)}></textarea>
-              <div className="err-text">{errors?.message?.message}</div>
+              <AnimationOnScroll animateIn='animate__headShake'>
+                <textarea
+                    className='input-field'
+                    placeholder='Hvem køber du legetøj til?'
+                    rows={8}
+                    {...register("message", {
+                        required: "*Husk at skrive noget"
+                    })}
+                    value={msg}
+                    onChange={(e) => setMsg(e.target.value)}></textarea>
+                <div className="err-text">{errors?.message?.message}</div>
+              </AnimationOnScroll>
 
-              <input className='submit-btn' type="submit" value="BLIV MEDLEM NU!" />
+              <AnimationOnScroll animateIn='animate__pulse'>
+                <input className='submit-btn' type="submit" value="BLIV MEDLEM NU!" />
+              </AnimationOnScroll>
               
               {answer ? renderAnswer() : caughtErr}
               

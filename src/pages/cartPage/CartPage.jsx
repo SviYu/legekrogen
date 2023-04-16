@@ -20,7 +20,7 @@ const CartPage = () => {
                     return <CartItem key={item._id} item={item} />
                 })}
               </li>
-              <p className='cart-total'>I alt {cartItems.reduce((amount, item) => item.price + amount, 0)} kr</p>
+              <p className='cart-total'>I alt {cartItems.reduce((amount, item) => item.price*item.qty + amount, 0)} kr</p>
             </>
         )}
       </ul>

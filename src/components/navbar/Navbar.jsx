@@ -33,7 +33,6 @@ const Navbar = () => {
                 </Link>
                     
                 <div className="navbar-right">
-                        
                         {cartItems.length > 0 ? 
                             <div className='count-active' onClick={showHideCart}>
                                 <BsCartFill className='cart-btn active' />

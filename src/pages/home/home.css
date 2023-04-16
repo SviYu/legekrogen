@@ -59,6 +59,10 @@
     text-align: center;
     padding: 2rem 3rem;
     border-radius: 3px;
+    box-shadow: 0px 0px 10px 0px var(--color-overlay);
+    transition: var(--transition);
+}
+.feedback-item:hover{
     box-shadow: 0px 0px 10px 5px var(--color-overlay);
 }
 .feedback-item p{

@@ -12,6 +12,7 @@ import CartPage from './pages/cartPage/CartPage';
 
 function App() {
 
+
   return (
     <BrowserRouter>
       <Navbar />

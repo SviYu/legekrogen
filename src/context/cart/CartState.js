@@ -1,10 +1,10 @@
 import { useEffect, useReducer } from "react";
 import CartContext from './CartContext'
 import CartReducer from './CartReducer'
-import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM } from './../Types'
+import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM} from './../Types'
 
 //get cart-items from localStorage or empty array
-const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart')) || '[]'
+const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart')) || []
 
 const CartState = ({ children }) => {
 
@@ -38,7 +38,7 @@ const CartState = ({ children }) => {
             cartItems: state.cartItems,
             addToCart,
             showHideCart,
-            removeItem
+            removeItem,
         }}>{children} </CartContext.Provider>
     )
 }

@@ -12,7 +12,7 @@
   --color-primary: #9478A7;
   --color-light-primary: #C1ADCE;
 
-  --color-secondary: #355674;
+  --color-secondary: rgb(53, 86, 116);
   --color-light-secondary: #D7E6EC;
 
   --color-white: #FFFFFF;
@@ -73,7 +73,9 @@ a{
 }
 
 .btn:hover {
-  filter: brightness(85%);
+  filter: brightness(140%);
+  transform: scale(1.02);
+  /* background-color: rgba(53, 86, 116, .8); */
 }
 
 /* Header Image Section */

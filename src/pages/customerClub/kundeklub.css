@@ -45,7 +45,8 @@ textarea{
     cursor: pointer;
 }
 .submit-btn:hover{
-    filter: brightness(85%);
+    filter: brightness(120%);
+    transform: scale(1.02);
 }
 
 /* Answer */

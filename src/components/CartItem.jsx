@@ -16,10 +16,15 @@ const CartItem = ({ item }) => {
               </div>
           </div>
 
+          {/* <div className="quantity">
+                <p>{item.qty} stk</p>
+          </div> */}
+
           <div className='cart-item-right'>
-                <p className='cart-item-right-price'>{item.price} kr</p>
-                <button className='cart-item-right-btn btn' onClick={() => removeItem
-                (item._id)}><FaTrash /></button>
+                <p className='cart-item-right-price'>{item.price*item.qty} kr</p>
+              <button className='cart-item-right-btn btn'
+                  onClick={() => removeItem(item._id)}><FaTrash /></button>
+                
         </div>
           
     </li>

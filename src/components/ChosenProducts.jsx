@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductItem from './ProductItem'
+import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const ChosenProducts = () => {
     const [chosenProducts, setChosenProducts] = useState([])
@@ -13,10 +14,13 @@ const ChosenProducts = () => {
         })
     }, [])
 
-  return (
-    <section className="products-section">
-        <h2 className='products-section-title'>Et udpluk af vores</h2>
-        <h3 className='products-section-subtitle'>LEGETØJ</h3>
+  return ( 
+    <AnimationOnScroll animateIn='animate__fadeIn'>
+      <section className="products-section">
+        <AnimationOnScroll animateIn='animate__rubberBand'>
+          <h2 className='products-section-title'>Et udpluk af vores</h2>
+          <h3 className='products-section-subtitle'>LEGETØJ</h3>
+        </AnimationOnScroll>
 
         <div className='products-wrapper'>
           {
@@ -25,6 +29,7 @@ const ChosenProducts = () => {
         </div>
         
       </section>
+    </AnimationOnScroll>
   )
 }
 
