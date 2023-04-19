@@ -9,7 +9,9 @@ const ChosenProducts = () => {
         fetch('https://legekrogen.webmcdm.dk/products')
             .then(response => response.json())
             .then(productData => {
-                console.log('Products', productData)
+              console.log('Products', productData)
+              
+              //here I filter if product has a true recommended status
                 setChosenProducts(productData.filter((chosenProducts) => chosenProducts.recommended))
         })
     }, [])

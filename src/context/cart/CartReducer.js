@@ -2,6 +2,7 @@ import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM} from './../Types'
 
 const CartReducer = (state, action) => {
     
+    //with help of different action.types we can change the state
     switch (action.type) {
         case SHOW_HIDE_CART: {
             return {
@@ -11,6 +12,7 @@ const CartReducer = (state, action) => {
         }
             
         case ADD_TO_CART: {
+            //checks if the product is already in the cart
             const cartItemInCart = state.cartItems.filter((item) => item._id === action.payload._id)
             console.log('State', state.cartItems.length)
 

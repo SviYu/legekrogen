@@ -12,6 +12,7 @@ const CartPage = () => {
     <section>
       <CartHeader />
       <ul className='cart-page-list container'>
+        {/* checks if there any items in the cart */}
         {cartItems.length === 0 ? 
           (<h4 className='empty-cart-text'>Du har ingen varer i kurv endnu.</h4>) : (
             <>
